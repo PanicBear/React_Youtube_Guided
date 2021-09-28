@@ -3,8 +3,9 @@ import styles from "./video_item.module.css"
 
 // (props) => 대신
 // ({ video : {snippet} }) => destructuring
-const VideoItem = ({ video: { snippet } }) =>
-  <li className={styles.containter}>
+const VideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
+  const displayType = display === 'list' ? styles.list : styles.grid;
+  return <li className={`${styles.containter} ${displayType}`} onClick={() => onVideoClick(video)}>
     <div className={styles.video}>
       <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt="video thumbnail" />
       <div className={styles.metadata}>
@@ -13,4 +14,6 @@ const VideoItem = ({ video: { snippet } }) =>
       </div>
     </div>
   </li>
+}
+
 export default VideoItem;
