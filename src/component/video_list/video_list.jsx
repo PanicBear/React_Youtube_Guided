@@ -7,13 +7,3 @@ const VideoList = ({ videos }) =>
     {videos.map(video => <VideoItem key={video.id} video={video} />)}
   </ul>
 export default VideoList;
-
-// TODO
-// List css two items per row
-
-
-/*
-<div className={styles.list}>
-  {props.videos.map((video) => <VideoItem key={video.id} video={video} />)}
-</div>
-*/
